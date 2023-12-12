@@ -22,7 +22,7 @@ if (userId !== null) {
   updateUser(findData);
 }
 // else {
-//   newuser();
+//   // newuser();
 // }
 
 cancel.addEventListener("click", function () {
@@ -57,7 +57,7 @@ function updateUser(findData) {
 }
 
 function newuser() {
-  let newUserId = Math.floor(Math.random() * 1000);
+  let newUserId = Math.floor(Math.random() * 1000); // Adjust the range as needed
   findData[newUserId] = {
     userId: newUserId,
     firstname: fname.value,
@@ -76,6 +76,10 @@ function addUpdate() {
     (userData) => userData.email === eml.value
   );
 
+  if (existingEmailIndex !== -1 && userId === null) {
+    alert("Email already present");
+    window.location.href = `./crud_page.html?id=${paramId}`;
+  }
   if (userId !== null) {
     const existingUserData = findData[userId];
     existingUserData.firstname = fname.value;
