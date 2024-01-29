@@ -28,7 +28,7 @@ if (userId !== null) {
 cancel.addEventListener("click", function () {
   window.location.href = `./crud_page.html?id=${paramId}`;
 });
- 
+
 subbtn.addEventListener("click", (e) => {
   console.log(fname.value);
   console.log(SalDate.value);
